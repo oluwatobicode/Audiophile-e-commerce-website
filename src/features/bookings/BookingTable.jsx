@@ -3,7 +3,7 @@ import Table from "../../ui/Table";
 import Menus from "../../ui/Menus";
 import { useBookings } from "./useBookings";
 import Spinner from "../../ui/Spinner";
-// import Empty from "../../ui/Empty";
+import Empty from "../../ui/Empty";
 import Pagination from "../../ui/Pagination";
 
 function BookingTable() {
@@ -11,9 +11,8 @@ function BookingTable() {
 
   console.log(bookings);
 
-  // if (!bookings.length) return <Empty resourceName="bookings" />;
-
   if (isLoading) return <Spinner />;
+  if (!bookings.length) return <Empty resourceName="bookings" />;
 
   return (
     <Menus>

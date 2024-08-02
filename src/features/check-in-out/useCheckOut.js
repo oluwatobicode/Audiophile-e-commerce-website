@@ -16,7 +16,7 @@ export function useCheckOut() {
       // it receives the data from the mutation function
       toast.success(`Booking #${data.id} successfully checked out!`);
       queryClient.invalidateQueries({ active: true });
-      navigate("/");
+      ()=>navigate("/");
     },
 
     onError: () => toast.error("There was an error while checking out!"),
